@@ -321,7 +321,7 @@ public class SplitLogFetch implements Runnable {
                 initializeRedoLogsForMining(jdbcConnection, true, startScn);
 
                 if (endScnInRedoLog) {
-                    firstLogMinerStartScnArchiveLogPO = LogMinerRepository.seekArchiveLog(jdbcConnection, startScn.add(Scn.valueOf(1)));
+                    firstLogMinerStartScnArchiveLogPO = LogMinerRepository.seekArchiveLog(jdbcConnection, logMinerStartScn.add(Scn.valueOf(1)));
                 }
 
                 startLogMining(
